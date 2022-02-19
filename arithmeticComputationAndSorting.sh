@@ -1,6 +1,9 @@
 #!/bin/bash -x
 
-echo "Arithmetic Compution And Sorting"
+echo "---- Arithmetic Compution And Sorting ----"
+
+#DECLARE DICTIONARY
+declare -A arithmeticOperation
 
 #TO TAKE INPUT FROM USER
 read -p "Enter first input :" firstInput
@@ -8,14 +11,21 @@ read -p "Enter second input:" secondInput
 read -p "Enter third input :" thirdInput
 
 #COMPUTE ARITHMETIC OPERATION
-result=`awk 'BEGIN{printf("%0.2f",'$firstInput' + '$secondInput' * '$thirdInput')}'`
+result1=`awk 'BEGIN{printf("%0.2f",'$firstInput' + '$secondInput' * '$thirdInput')}'`
 echo "Result:" $result
 
-resultTwo=`awk 'BEGIN{printf("%0.2f",'$firstInput' * '$secondInput' + '$thirdInput')}'`
+result2=`awk 'BEGIN{printf("%0.2f",'$firstInput' * '$secondInput' + '$thirdInput')}'`
 echo "Result:" $resultTwo
 
-resultThree=`awk 'BEGIN{printf("%0.2f",'$firstInput' + '$secondInput' / '$thirdInput' )}'`
+result3=`awk 'BEGIN{printf("%0.2f",'$firstInput' + '$secondInput' / '$thirdInput' )}'`
 echo "Result:" $resultThree
 
-resultFour=`awk 'BEGIN{printf("%0.2f",'$firstInput' % '$secondInput' + '$thirdInput')}'`
+result4=`awk 'BEGIN{printf("%0.2f",'$firstInput' % '$secondInput' + '$thirdInput')}'`
 echo "Result:" $resultFour
+
+#TO STORE THE DICTIONARY
+arithmeticOperation[((result1))]=$result1
+arithmeticOperation[((result2))]=$result2
+arithmeticOperation[((result3))]=$result3
+arithmeticOperation[((result4))]=$result4
+
