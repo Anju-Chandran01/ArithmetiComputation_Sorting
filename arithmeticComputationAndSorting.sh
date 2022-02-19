@@ -11,3 +11,5 @@ read -p "Enter third input :" thirdInput
 result=`awk 'BEGIN{printf("%0.2f",'$firstInput' + '$secondInput' * '$thirdInput')}'`
 echo "Result:" $result
 
+resultTwo=`awk 'BEGIN{printf("%0.2f",'$firstInput' * '$secondInput' + '$thirdInput')}'`
+echo "Result:" $resultTwo
