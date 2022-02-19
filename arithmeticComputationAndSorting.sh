@@ -38,3 +38,7 @@ do
   array[((index))]=${arithmeticOperation[((result$((index+1))))]}
 done
 echo "${array[@]}"
+
+#SORT RESULTS IN DESCENDING ORDER
+sortDescendingArray=( $( printf "%s\n" "${array[@]}" | sort -nr ) )
+echo ${sortDescendingArray[@]}
