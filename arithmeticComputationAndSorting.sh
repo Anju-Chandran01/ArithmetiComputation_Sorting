@@ -42,3 +42,7 @@ echo "${array[@]}"
 #SORT RESULTS IN DESCENDING ORDER
 sortDescendingArray=( $( printf "%s\n" "${array[@]}" | sort -nr ) )
 echo ${sortDescendingArray[@]}
+
+#SORT RESULTS IN ASCENDING ORDER
+sortAscendingArray=( $( printf "%s\n" "${array[@]}" | sort -n ) )
+echo "Ascending order of array" ${sortAscendingArray[@]}
