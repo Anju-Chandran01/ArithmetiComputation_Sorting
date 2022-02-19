@@ -5,6 +5,9 @@ echo "---- Arithmetic Compution And Sorting ----"
 #DECLARE DICTIONARY
 declare -A arithmeticOperation
 
+#DECLARE AN ARRAY
+declare -a array
+
 #TO TAKE INPUT FROM USER
 read -p "Enter first input :" firstInput
 read -p "Enter second input:" secondInput
@@ -29,3 +32,9 @@ arithmeticOperation[((result2))]=$result2
 arithmeticOperation[((result3))]=$result3
 arithmeticOperation[((result4))]=$result4
 
+#READ DICTIONARY VALUE IN ARRAY
+for ((index=0; index<=${#arithmeticOperation[@]}; index++))
+do
+  array[((index))]=${arithmeticOperation[((result$((index+1))))]}
+done
+echo "${array[@]}"
